@@ -1,0 +1,22 @@
+.alaune{
+    width: auto;
+    height: 300px;
+    overflow:auto;
+}
+.aladeux{
+    width: auto;
+    height: 300px;
+    overflow-inline: auto;
+}
+.navbar{
+    opacity:85%;
+}
+
+.hover_card:hover{
+    transform: scale(2);
+    position:absolute;
+    z-index: 100;
+}
+a{
+    color: transparent;
+}
