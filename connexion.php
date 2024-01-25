@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
     $user = $userManager->getUserByUsername($pseudo);
 
-    if ($user && $password) {
+    if ($user && password_verify($password, $user['passwd'])) {
         // Connexion réussie, enregistrez l'ID utilisateur dans la session
         $_SESSION['user_id'] = $user['id_utilisateur'];
         $_SESSION['pseudo'] = $user['pseudo'];
