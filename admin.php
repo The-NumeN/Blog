@@ -16,6 +16,7 @@ $articleManager = new Article($database);
 $articles = $articleManager->getAllArticles();
 
 include "header.php";
+include "style.php";
 ?>
 
 <!DOCTYPE html>

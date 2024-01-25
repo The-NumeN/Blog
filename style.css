@@ -24,3 +24,8 @@
 a{
     text-decoration: none;
 }
+.size{
+    max-height: fit-content;
+    max-width: fit-content;
+    display: block;
+}
