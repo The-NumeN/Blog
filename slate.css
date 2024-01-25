@@ -13,7 +13,7 @@ form {
     width: 100%;
     margin-left:auto;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(119, 119, 119);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
@@ -43,7 +43,7 @@ a{
     max-width: fit-content;
 }
 body{
-    background-color:darkgrey;
+    background-color:darkslategray;
     text-align: center;
 }
 .ppnav{
@@ -52,7 +52,4 @@ body{
 }
 .card-header{
     font:bolder;
-}
-footer{
-
 }
