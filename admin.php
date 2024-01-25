@@ -15,6 +15,7 @@ $database = new Database();
 $articleManager = new Article($database);
 $articles = $articleManager->getAllArticles();
 
+include "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,22 +26,6 @@ $articles = $articleManager->getAllArticles();
     <title>Liste des Articles</title>
 </head>
 <body>
-    <div>
-        <?php
-        // Vérifier si l'utilisateur est connecté
-        if (isset($_SESSION["pseudo"])) {
-            echo "<p>Bienvenue, {$_SESSION['pseudo']}!</p>";
-            echo "<a href='deco.php'>Déconnexion</a>";
-        } else {
-            echo "<p>Non connecté</p>";
-        }
-        
-        if (!$userId) {
-            echo '<p><a href="inscription.php">Inscription</a></p>';
-            echo '<p><a href="connexion.php">Connexion</a></p>';
-        }
-    ?>
-    </div>
     <h2>Liste des Articles</h2>
     <!-- Affich tous les articles -->
     <?php foreach ($articles as $article) : ?>
