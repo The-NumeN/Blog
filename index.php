@@ -21,12 +21,12 @@ include "header.php";
 
 <body>
     <!-- CONTAINER SITE -->
-    <div class='container bg-light  my-5 px-5 border rounded'>
+    <div class='container bg-light border  border-5 border-success my-5 px-5 rounded text-bg-color'>
         <!-- ARTICLE A LA UNE -->
         <h2 class='my-3'>Article à la une</h2>
-        <div class='container bg-secondary rounded'>
+        <div class='container  border border-5 rounded'>
         
-            <div class='container p-3 my-5 text-light'>
+            <div class='container p-3 my-5 text-bg-color'>
 
             
                 <div class='alaune'>
@@ -52,7 +52,7 @@ include "header.php";
 
         <!-- DEBUT DES AUTRES ARTICLES -->
         <h2 class='my-3'>Autres articles</h2>
-        <div class='container bg-dark p-3 my-5 border rounded'>
+        <div class='container bg-light p-3 my-5 border border-5 rounded'>
         
             <div class="row">
                 <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
@@ -61,8 +61,8 @@ include "header.php";
                         <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
                             <div class='hover_card'>
                                 <div class='card'>
-                                    <div class='card-header bg-primary'>
-                                        <p class='display-6'>
+                                    <div class='card-header bg-success '>
+                                        <p class='display-6 text-bg-color'>
                                             <?php echo $article['Titre']; ?>
                                         </p>
                                     </div>

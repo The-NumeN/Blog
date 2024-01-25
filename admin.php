@@ -30,9 +30,9 @@ include "style.php";
 
 <body>
     <br><br>
-    <div class='container bg-secondary border rounded text-white'>
+    <div class='container bg-light border border-5 border-success rounded text-bg-color'>
     <h2 class='my-3'>Article à la une</h2>
-        <div class='container-fluid bg-dark rounded'>
+        <div class='container-fluid bg-light border border-3 rounded'>
         
             <div class='container p-3 my-5'>
 
@@ -58,7 +58,7 @@ include "style.php";
         </div><br>
         <h2>Autres articles</h2>
         <!-- Affich tous les articles -->
-        <div class='container p-3 my-5 '>
+        <div class='container  border border-3 rounded p-3 my-5 '>
             <div class="row text-white">
                 <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
                 <?php foreach ($articles as $article): ?>
@@ -66,7 +66,7 @@ include "style.php";
                         <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
                             <div class='hover_card'>
                                 <div class='card'>
-                                    <div class='card-header bg-success text-white'>
+                                    <div class='card-header bg-success text-bg-color '>
                                         <p class='display-6'>
                                             <?php echo $article['Titre']; ?>
                                         </p>
