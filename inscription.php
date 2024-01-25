@@ -56,22 +56,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 <body>
     <br><br>
     <div class='container bg-secondary border rounded'>
-        <h2>Inscription</h2>
+        <h2 class='text-white'>Inscription</h2>
         <?php if (isset($error)): ?>
             <p style="color: red;">
                 <?php echo $error; ?>
             </p>
         <?php endif; ?>
         <div class='d-flex flex-column'>
-            <form class='container mx-5 px-3' method="POST" action="">
-                <label for="pseudo">Pseudo:</label>
-                <input type="text" name="pseudo" required><br>
-                <label for="password">Mot de passe:</label>
-                <input type="password" name="password" required><br>
-                <label for="email">Email:</label>
-                <input type="email" name="email" required><br>
-                <input type="submit" name="register" value="S'inscrire">
-            </form>
+            <div class='size justify-content-center px-5'>
+                <form class='container mx-5 px-3' method="POST" action="">
+
+                    <label for="pseudo" class="d-flex justify-content-center text-white">Pseudo:</label>
+                    <input type="text" class="d-flex justify-content-center text-white" name="pseudo" required><br>
+                    <label for="password" class="d-flex justify-content-center text-white">Mot de passe:</label>
+                    <input type="password" class="d-flex justify-content-center text-white" name="password"
+                        required><br>
+                    <label for="email" class="d-flex justify-content-center text-white">Email:</label>
+                    <input type="email" class="d-flex justify-content-center text-white" name="email" required><br>
+                    <input type="submit" class="d-flex justify-content-center text-white btn btn-success rounded-pill"
+                        name="register" value="S'inscrire">
+                </form>
+            </div>
         </div>
     </div>
 </body>

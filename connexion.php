@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                     <input type="text" class="d-flex justify-content-center text-white" name="pseudo" required><br>
                     <label for="password" class="d-flex justify-content-center text-white">Mot de passe:</label>
                     <input type="password" class="d-flex justify-content-center text-white" name="password" required><br>
-                    <input type="submit" class="d-flex justify-content-center text-white" name="login" value="Se connecter">
+                    <input type="submit" class="d-flex justify-content-center text-white btn btn-success rounded-pill" name="login" value="Se connecter">
                 </div>
             </div>
         </form>
