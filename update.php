@@ -37,22 +37,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier l'Article</title>
 </head>
+
 <body>
-    <h2>Modifier l'Article</h2>
+    <h2 class='text-white'>Modifier l'Article</h2><br>
+    <div class='size container'>
+        <form method="post" action="">
+            <label for="new_title">Nouveau Titre :</label><br>
+            <input type="text" name="new_title" value="<?php echo $articleDetails['Titre']; ?>" required><br>
+            <label for="new_text">Nouveau Texte :</label>
+            <textarea name="new_text" rows="4" cols="50" required><?php echo $articleDetails['Texte']; ?></textarea><br><br>
 
-    <form method="post" action="">
-        <label for="new_title">Nouveau Titre :</label>
-        <input type="text" name="new_title" value="<?php echo $articleDetails['Titre']; ?>" required><br>
-
-        <label for="new_text">Nouveau Texte :</label>
-        <textarea name="new_text" rows="4" cols="50" required><?php echo $articleDetails['Texte']; ?></textarea><br>
-
-        <input type="submit" value="Modifier l'Article">
-    </form>
+            <input class=" text-white btn btn-success rounded-pill" type="submit" value="Modifier l'Article">
+        </form>
+    </div>
 </body>
+
 </html>
