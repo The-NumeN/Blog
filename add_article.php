@@ -36,22 +36,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Chemin complet du fichier
     $imgPath = $uploadDir .$imageName;
 
-    // Déplacer le fichier téléchargé vers le répertoire d'images
+     // Déplacer le fichier téléchargé vers le répertoire d'images
     move_uploaded_file($_FILES['fic']['tmp_name'], $imgPath);
 
-   
+    // Convertir la date en format compatible avec MySQL (si nécessaire)
+    $datePub = date("Y-m-d H:i:s");
+
     $stmt = $database->connection->prepare("INSERT INTO Articles (Titre, Texte, Date_pub, img_path) VALUES (?, ?, ?, ?)");
 
-    $datePub = date('Y-m-d H:i:s');
     // Liaison des paramètres
-    $stmt->bind_param("ssii",$titre, $texte,$datePub,$imgPath);
-    
+    $stmt->bind_param("ssss", $titre, $texte, $datePub, $imgPath);
+
     if ($stmt->execute()) {
-        
         header("Location: admin.php");
     } else {
-        echo "Erreur lors de l'insertion de l'article : " .$database->connection->error;
+        echo "Erreur lors de l'insertion de l'article : " . $stmt->error;
     }
+
 }
 ?>
 <!DOCTYPE html>
