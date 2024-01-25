@@ -66,22 +66,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <br><br>
-   
-    <div class='container bg-secondary border rounded p-3'>
-    <h2>Ajout de l'article</h2>
-        <form class='size container' enctype="multipart/form-data" action="" method="post">
-            <label for="titre">Titre :</label>
-            <input type="text" name="titre" required><br>
 
-            <label for="texte">Texte :</label>
-            <textarea name="texte" required></textarea><br>
 
-            <label for="fic">Image :</label>
-            <input type="file" name="fic" required><br>
+    <h2 class='text-white'>Ajout de l'article</h2>
+    <form class='size container' enctype="multipart/form-data" action="" method="post">
+        <label for="titre">Titre :</label>
+        <input type="text" name="titre" required><br>
 
-            <button class='btn btn-success pill text-white'type="submit" value="Envoyer"> Envoyer</button>
-        </form>
-    </div>
+        <label for="texte">Texte :</label>
+        <textarea name="texte" required></textarea><br>
+
+        <label for="fic">Image :</label>
+        <input type="file" name="fic" required><br>
+
+        <button class='btn btn-success pill text-white' type="submit" value="Envoyer"> Envoyer</button>
+    </form>
+
 
 </body>
 

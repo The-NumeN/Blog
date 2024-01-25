@@ -55,26 +55,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
 <body>
     <br><br>
-    <div class='container bg-secondary border rounded'>
-        <h2 class='text-white'>Inscription</h2>
-        <?php if (isset($error)): ?>
-            <p style="color: red;">
-                <?php echo $error; ?>
-            </p>
-        <?php endif; ?>
-            <div class='size container'>
-                <form  method="POST" action="">
-                    <label for="pseudo" >Pseudo:</label>
-                    <input type="text"  name="pseudo" required><br>
-                    <label for="password" >Mot de passe:</label>
-                    <input type="password"  name="password"
-                        required><br>
-                    <label for="email" >Email:</label>
-                    <input type="email"  name="email" required><br>
-                    <input type="submit" class=" text-white btn btn-success rounded-pill" name="register" value="S'inscrire">
-                </form>
-            </div>
+
+    <h2 class='text-white'>Inscription</h2><br>
+    <?php if (isset($error)): ?>
+        <p style="color: red;">
+            <?php echo $error; ?>
+        </p>
+    <?php endif; ?>
+    <div class='size container'>
+        <form method="POST" action="">
+            <label for="pseudo">Pseudo:</label>
+            <input type="text" name="pseudo" required><br>
+            <label for="password">Mot de passe:</label>
+            <input type="password" name="password" required><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+            <input type="submit" class=" text-white btn btn-success rounded-pill" name="register" value="S'inscrire">
+        </form>
     </div>
+
 </body>
 
 </html>
