@@ -130,7 +130,6 @@ class Utilisateur {
             return;
         }
     }
-
     public function addUser($pseudo, $passwd, $mail) {
         $query = "INSERT INTO Utilisateurs (pseudo, passwd, mail) VALUES ('$pseudo', '$passwd', '$mail')";
         return $this->db->connection->query($query);
