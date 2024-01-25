@@ -40,13 +40,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     move_uploaded_file($_FILES['fic']['tmp_name'], $imgPath);
 
    
-    $stmt = $conn->prepare("INSERT INTO Articles (Titre, Texte, Date_pub, img_path) VALUES (?, ?, ?, ?)");
+    $stmt = $database->connection->prepare("INSERT INTO Articles (Titre, Texte, Date_pub, img_path) VALUES (?, ?, ?, ?)");
 
 
     // Liaison des paramètres
     $stmt->bind_param("ssii",$titre, $texte,$datePub,$imgPath);
-    if ($database->connection->query($stmt)) {
-
+    
+    if ($stmt->execute()) {
+        
         header("Location: admin.php");
     } else {
         echo "Erreur lors de l'insertion de l'article : " .$database->connection->error;
