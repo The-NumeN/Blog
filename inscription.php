@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
             </p>
         <?php endif; ?>
         <div class='d-flex flex-column'>
-            <div class='size justify-content-center px-5'>
+            <div class='size'>
                 <form class='container mx-5 px-3 justify-content-center' method="POST" action="">
 
                     <label for="pseudo" class="d-flex  text-white">Pseudo:</label>
