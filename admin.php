@@ -35,8 +35,8 @@ include "header.php";
             <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>">Lire la suite</a>
             <a href="update.php?current_article_id=<?php echo $article['id_article']; ?>">Modifier</a>
             <a href="delete.php?current_article_id=<?php echo $article['id_article']; ?>">Supprimer</a>
-
         </div>
     <?php endforeach; ?>
+    <a href="add_article.php">Ajouter un article</a>
 </body>
 </html>

@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO Articles (Titre, Texte, Date_pub, img_path) VALUES ('$titre', '$texte', '$datePub', '$imgPath')";
 
     if ($database->connection->query($query)) {
-        echo "Article inséré avec succès.";
+        header("Location: admin.php");
     } else {
         echo "Erreur lors de l'insertion de l'article : " .$database->connection->error;
     }
