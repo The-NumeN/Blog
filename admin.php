@@ -62,8 +62,8 @@ include "style.php";
             <div class="row text-white">
                 <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
                 <?php foreach ($articles as $article): ?>
-                    <div class='col-xl-4 col-lg-4'>
-                        <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
+                    <div class='col-xl-4 col-lg-4 text-bg-color'>
+                        <a class='text-dark'href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
                             <div class='hover_card'>
                                 <div class='card'>
                                     <div class='card-header bg-success text-bg-color '>
