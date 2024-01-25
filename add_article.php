@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="fic">Image :</label>
             <input type="file" name="fic" required><br>
 
-            <input type="submit" value="Envoyer">
+            <button class='btn btn-success pill text-white'type="submit" value="Envoyer"> Envoyer</button>
         </form>
     </div>
 
