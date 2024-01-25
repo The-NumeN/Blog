@@ -52,7 +52,7 @@ include "style.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article</title>
 </head>
-<body>
+<body><br>
     <h2><?php echo isset($articleDetails['Titre']) ? $articleDetails['Titre'] : 'Titre non disponible'; ?></h2>
     <?php
     // Affiche l'image si le chemin de l'image est disponible
