@@ -31,6 +31,31 @@ include "style.php";
 <body>
     <br><br>
     <div class='container bg-secondary border rounded text-white'>
+    <h2 class='my-3'>Article A La Une</h2>
+        <div class='container-fluid bg-dark rounded'>
+        
+            <div class='container p-3 my-5'>
+
+            
+                <div class='alaune'>
+                    <!-- Affich tous les articles -->
+                    <?php if (!empty($articles)) {
+                        $randomKey = array_rand($articles);
+                        $randomArticle = $articles[$randomKey];
+                        ?>
+
+                        <h3>
+                            <?php echo $randomArticle['Titre']; ?>
+                        </h3>
+                        <p>
+                            <?php echo ($randomArticle['Texte']); ?>
+                        </p>
+                    </div>
+                </div>
+                <?php
+                    }
+                ?>
+        </div><br>
         <h2>Liste des Articles</h2>
         <!-- Affich tous les articles -->
         <div class='container bg-dark p-3 my-5 border rounded'>
