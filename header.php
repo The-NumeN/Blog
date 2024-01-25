@@ -3,6 +3,7 @@
 require_once "classes.php";
 $database = new Database();
 $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+include"style.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +11,6 @@ $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="container-fluid bg-dark">
@@ -31,8 +30,7 @@ $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
         }
 
         if (!$userId) {
-            // echo '<p><a href="inscription.php">Inscription</a></p>';
-            // echo '<p><a href="connexion.php">Connexion</a></p>';
+
             echo"<div class='btn-group'>
                 <button type='button' class='btn btn-success rounded-pill mx-1'><a href='inscription.php'
                     class='text-white'>S'inscrire</a></button>
