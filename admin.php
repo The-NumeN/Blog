@@ -42,7 +42,7 @@ include "style.php";
                     <?php if (!empty($articles)) {
                         $randomKey = array_rand($articles);
                         $randomArticle = $articles[$randomKey];
-                        ?>
+                    ?>
 
                         <h3>
                             <?php echo $randomArticle['Titre']; ?>
@@ -50,8 +50,8 @@ include "style.php";
                         <p>
                             <?php echo ($randomArticle['Texte']); ?>
                         </p>
-                    </div>
                 </div>
+            </div>
                 <?php
                     }
                 ?>
