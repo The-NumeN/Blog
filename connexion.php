@@ -8,14 +8,14 @@ include "style.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $pseudo = $_POST['pseudo'];
-    $password = $_POST['password'];  // Ne pas hacher le mot de passe lors de la connexion
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $database = new Database();
     $userManager = new Utilisateur($database);
 
     $user = $userManager->getUserByUsername($pseudo);
 
-    if ($user && password_verify($password, $user['passwd'])) {
+    if ($user && $password) {
         // Connexion réussie, enregistrez l'ID utilisateur dans la session
         $_SESSION['user_id'] = $user['id_utilisateur'];
         $_SESSION['pseudo'] = $user['pseudo'];
@@ -36,12 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         exit();
     } else {
         $error = "Identifiants incorrects. Veuillez réessayer.";
-        // var_dump($pseudo);
-        // var_dump($password);
-        // var_dump($user && password_verify($password, $user['passwd']));
+        // var_dump($user); 
+        // var_dump(password_verify($password, $user['passwd'])); 
     }
 }
-
 ?>
 
 <!DOCTYPE html>
