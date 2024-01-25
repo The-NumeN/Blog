@@ -9,7 +9,7 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] !== 'admin') {
 }
 
 include_once 'classes.php';
- 
+
 include "header.php";
 include "style.php";
 
@@ -34,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uploadDir = 'images/';
 
     // Chemin complet du fichier
-    $imgPath = $uploadDir .$imageName;
+    $imgPath = $uploadDir . $imageName;
 
-     // Déplacer le fichier téléchargé vers le répertoire d'images
+    // Déplacer le fichier téléchargé vers le répertoire d'images
     move_uploaded_file($_FILES['fic']['tmp_name'], $imgPath);
 
     // Convertir la date en format compatible avec MySQL (si nécessaire)
@@ -57,25 +57,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h2>Ajout de l'article</h2>
-    <form enctype="multipart/form-data" action="" method="post">
-        <label for="titre">Titre :</label>
-        <input type="text" name="titre" required><br>
+    <div class='container bg-secondary border rounded p-3'>
 
-        <label for="texte">Texte :</label>
-        <textarea name="texte" required></textarea><br>
+        <form class='size container' enctype="multipart/form-data" action="" method="post">
+            <label for="titre">Titre :</label>
+            <input type="text" name="titre" required><br>
 
-        <label for="fic">Image :</label>
-        <input type="file" name="fic" required><br>
+            <label for="texte">Texte :</label>
+            <textarea name="texte" required></textarea><br>
 
-        <input type="submit" value="Envoyer">
-    </form>
-    
+            <label for="fic">Image :</label>
+            <input type="file" name="fic" required><br>
+
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+
 </body>
+
 </html>

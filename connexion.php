@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 <?php echo $error; ?>
             </p>
         <?php endif; ?>
-        <form class='container  method="POST" action="">
+        <form class='container'  method="POST" action="">
                 <div class='size container'>
                     <label for="pseudo">Pseudo:</label>
                     <input type="text" name="pseudo" required><br>
