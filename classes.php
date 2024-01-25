@@ -132,8 +132,7 @@ class Utilisateur {
     }
 
     public function addUser($pseudo, $passwd, $mail) {
-        $passwdHashed = password_hash($passwd, PASSWORD_DEFAULT);
-        $query = "INSERT INTO Utilisateurs (pseudo, passwd, mail) VALUES ('$pseudo', '$passwdHashed', '$mail')";
+        $query = "INSERT INTO Utilisateurs (pseudo, passwd, mail) VALUES ('$pseudo', '$passwd', '$mail')";
         return $this->db->connection->query($query);
     }
 }
