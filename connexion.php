@@ -53,22 +53,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
 <body>
     <br><br>
-    <div class='container bg-secondary border rounded'>
-        <h2 class='text-white'>Connexion</h2>
-        <?php if (isset($error)): ?>
-            <p style="color: red;">
-                <?php echo $error; ?>
-            </p>
-        <?php endif; ?>
-        <form class='size container' method="POST" action="">
+    <div class='ziez'>
+        <div class='container bg-secondary border rounded'>
+            <h2 class='text-white'>Connexion</h2>
+            <?php if (isset($error)): ?>
+                <p style="color: red;">
+                    <?php echo $error; ?>
+                </p>
+            <?php endif; ?>
+            <form class='size container' method="POST" action="">
 
-            <label for="pseudo">Pseudo:</label>
-            <input type="text" name="pseudo" required><br>
-            <label for="password">Mot de passe:</label>
-            <input type="password" name="password" required><br>
-            <input type="submit" class=" text-white btn btn-success rounded-pill" name="login" value="Se connecter">
+                <label for="pseudo">Pseudo:</label>
+                <input type="text" name="pseudo" required><br>
+                <label for="password">Mot de passe:</label>
+                <input type="password" name="password" required><br>
+                <input type="submit" class=" text-white btn btn-success rounded-pill" name="login" value="Se connecter">
 
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 

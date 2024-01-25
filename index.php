@@ -16,14 +16,14 @@ include "header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Articles</title>
+    <title>PSB_Blog</title>
 </head>
 
 <body>
     <!-- CONTAINER SITE -->
     <div class='container bg-secondary my-5 border rounded text-white'>
         <!-- ARTICLE A LA UNE -->
-        <h2 class='my-3'>Article A La Une</h2>
+        <h2 class='my-3'>Article à la une</h2>
         <div class='container-fluid bg-dark rounded'>
         
             <div class='container p-3 my-5'>
@@ -51,7 +51,7 @@ include "header.php";
         <!-- FIN ARTICLE A LA UNE -->
 
         <!-- DEBUT DES AUTRES ARTICLES -->
-        <h2 class='my-3'>Liste des Articles</h2>
+        <h2 class='my-3'>Autres articles</h2>
         <div class='container bg-dark p-3 my-5 border rounded'>
         
             <div class="row">
@@ -85,7 +85,7 @@ include "header.php";
     <!-- FIN CONTAINER SITE -->
 </body>
 <footer class='fixed-bottom'>
-    <div class="container-fluid bg-secondary border rounded py-1">
+    <div class="container-fluid bg-dark border rounded py-1">
         <div class="row justify-content-center">
             <div class="col-lg-3 item social">
                 <p class="copyright text-white"> Babacar Stive & Paul</p>

@@ -43,7 +43,7 @@ a{
     max-width: fit-content;
 }
 body{
-    background-color:darkgrey;
+    background-color:darkslategray;
     text-align: center;
 }
 .ppnav{
@@ -53,6 +53,6 @@ body{
 .card-header{
     font:bolder;
 }
-footer{
-
+.ziez_container{
+width: 75%;
 }
