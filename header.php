@@ -4,7 +4,19 @@ require_once "classes.php";
 $database = new Database();
 $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 include "style.php";
+
+if (isset($_SESSION['pseudo'])) {
+    // Récupérez le pseudo de l'utilisateur
+    $pseudo = $_SESSION['pseudo'];
+
+    // Vérifiez si l'utilisateur est admin
+    $redirectPage = ($pseudo == 'admin') ? 'admin.php' : 'index.php';
+} else {
+    // Si l'utilisateur n'est pas connecté, redirigez-le vers la page d'accueil
+    $redirectPage = 'index.php';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +28,7 @@ include "style.php";
 <body class="container-fluid">
     <!-- NAVBAR -->
     <div class='navbar  bg-secondary fixed-top rounded mx-3'>
-        <h1 class='text-white mx-3'><a href="index.php">Ceci est notre Blog</a> </h1>
+        <h1 class='text-white mx-3'><a href="<?php echo $redirectPage; ?>">Ceci est notre blog</a></h1>
         <?php
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION["pseudo"])) {

@@ -8,14 +8,14 @@ include "style.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $pseudo = $_POST['pseudo'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];  // Ne pas hacher le mot de passe lors de la connexion
 
     $database = new Database();
     $userManager = new Utilisateur($database);
 
     $user = $userManager->getUserByUsername($pseudo);
 
-    if ($user && $password) {
+    if ($user && password_verify($password, $user['passwd'])) {
         // Connexion réussie, enregistrez l'ID utilisateur dans la session
         $_SESSION['user_id'] = $user['id_utilisateur'];
         $_SESSION['pseudo'] = $user['pseudo'];
@@ -36,10 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         exit();
     } else {
         $error = "Identifiants incorrects. Veuillez réessayer.";
-        // var_dump($user); 
-        // var_dump(password_verify($password, $user['passwd'])); 
+        // var_dump($pseudo);
+        // var_dump($password);
+        // var_dump($user && password_verify($password, $user['passwd']));
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -60,14 +62,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 <?php echo $error; ?>
             </p>
         <?php endif; ?>
-        <form class='container'  method="POST" action="">
-                <div class='size container'>
-                    <label for="pseudo">Pseudo:</label>
-                    <input type="text" name="pseudo" required><br>
-                    <label for="password">Mot de passe:</label>
-                    <input type="password" name="password" required><br>
-                    <input type="submit" class=" text-white btn btn-success rounded-pill" name="login" value="Se connecter">
-                </div>
+        <form class='size container' method="POST" action="">
+
+            <label for="pseudo">Pseudo:</label>
+            <input type="text" name="pseudo" required><br>
+            <label for="password">Mot de passe:</label>
+            <input type="password" name="password" required><br>
+            <input type="submit" class=" text-white btn btn-success rounded-pill" name="login" value="Se connecter">
+
         </form>
     </div>
 </body>
