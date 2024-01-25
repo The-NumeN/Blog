@@ -20,16 +20,16 @@ include "header.php";
 </head>
 
 <body>
-
     <!-- CONTAINER SITE -->
     <div class='container bg-secondary my-5 border rounded text-white'>
-
         <!-- ARTICLE A LA UNE -->
+        <h2 class='my-3'>Article A La Une</h2>
         <div class='container-fluid bg-dark rounded'>
-            <div class='container justify-content-center p-3 my-5 rounded'>
-                <div class='alaune'>
-                    <h2 class='my-3'>Liste des Articles</h2>
+        
+            <div class='container p-3 my-5'>
 
+            
+                <div class='alaune'>
                     <!-- Affich tous les articles -->
                     <?php if (!empty($articles)) {
                         $randomKey = array_rand($articles);
@@ -40,46 +40,46 @@ include "header.php";
                             <?php echo $randomArticle['Titre']; ?>
                         </h3>
                         <p>
-                            <?php echo substr($randomArticle['Texte'], 0, 100) . '...'; ?>
+                            <?php echo ($randomArticle['Texte']); ?>
                         </p>
+                    </div>
                 </div>
-            </div>
                 <?php
                     }
-                    ?>
+                ?>
         </div>
-    
+        <!-- FIN ARTICLE A LA UNE -->
 
-    <!-- FIN ARTICLE A LA UNE -->
-
-    <!-- DEBUT DES AUTRES ARTICLES -->
-    <div class='container bg-dark p-3 my-5 border rounded'>
-        <div class="row">
-            <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
-            <?php foreach ($articles as $article): ?>
-                <div class='col-xl-4 col-lg-4'>
-                    <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
-                        <div class='hover_card'>
-                            <div class='card'>
-                                <div class='card-header bg-primary'>
-                                    <p class='display-6'>
-                                        <?php echo $article['Titre']; ?>
-                                    </p>
-                                </div>
-                                <div class='card-body'>
-                                    <p>
-                                        <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
-                                    </p>
+        <!-- DEBUT DES AUTRES ARTICLES -->
+        <h2 class='my-3'>Liste des Articles</h2>
+        <div class='container bg-dark p-3 my-5 border rounded'>
+        
+            <div class="row">
+                <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
+                <?php foreach ($articles as $article): ?>
+                    <div class='col-xl-4 col-lg-4'>
+                        <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
+                            <div class='hover_card'>
+                                <div class='card'>
+                                    <div class='card-header bg-primary'>
+                                        <p class='display-6'>
+                                            <?php echo $article['Titre']; ?>
+                                        </p>
+                                    </div>
+                                    <div class='card-body'>
+                                        <p>
+                                            <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-            <?php endforeach; ?>
-            <!-- FIN DES CARTES ARTICLES -->
+                <?php endforeach; ?>
+                <!-- FIN DES CARTES ARTICLES -->
+            </div>
         </div>
-    </div>
     </div>
     <!-- FIN CONTAINER SITE -->
 </body>
