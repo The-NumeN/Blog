@@ -64,16 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
         <?php endif; ?>
         <div class='d-flex flex-column'>
             <div class='size justify-content-center px-5'>
-                <form class='container mx-5 px-3' method="POST" action="">
+                <form class='container mx-5 px-3 justify-content-center' method="POST" action="">
 
-                    <label for="pseudo" class="d-flex justify-content-center text-white">Pseudo:</label>
-                    <input type="text" class="d-flex justify-content-center text-white" name="pseudo" required><br>
-                    <label for="password" class="d-flex justify-content-center text-white">Mot de passe:</label>
-                    <input type="password" class="d-flex justify-content-center text-white" name="password"
+                    <label for="pseudo" class="d-flex  text-white">Pseudo:</label>
+                    <input type="text" class="d-flex text-white" name="pseudo" required><br>
+                    <label for="password" class="d-flex text-white">Mot de passe:</label>
+                    <input type="password" class="d-flex  text-white" name="password"
                         required><br>
-                    <label for="email" class="d-flex justify-content-center text-white">Email:</label>
-                    <input type="email" class="d-flex justify-content-center text-white" name="email" required><br>
-                    <input type="submit" class="d-flex justify-content-center text-white btn btn-success rounded-pill"
+                    <label for="email" class="d-flex  text-white">Email:</label>
+                    <input type="email" class="d-flex  text-white" name="email" required><br>
+                    <input type="submit" class="d-flex  text-white btn btn-success rounded-pill"
                         name="register" value="S'inscrire">
                 </form>
             </div>
