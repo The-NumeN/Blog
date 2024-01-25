@@ -63,6 +63,7 @@ include "style.php";
                 <?php endforeach; ?>
                 <!-- FIN DES CARTES ARTICLES -->
             </div>
+            <br><br> 
         <a href="add_article.php" class='btn btn-success pill text-white'>Ajouter un article</a>
         </div>
         
