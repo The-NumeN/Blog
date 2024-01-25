@@ -27,25 +27,26 @@ $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION["pseudo"])) {
             echo "<p class='text-white'>Bienvenue, {$_SESSION['pseudo']}!</p>";
-            echo "";
+            echo "<button type='button' class='btn btn-danger rounded-pill mx-3 float-end'><a href='deco.php'
+            class='text-white'>Deconnexion</a></button>
+            </div>";
+            
         } else {
             echo "<p class='text-white'>Non connecté</p>";
         }
 
         if (!$userId) {
-            echo '<p><a href="inscription.php">Inscription</a></p>';
-            echo '<p><a href="connexion.php">Connexion</a></p>';
+            // echo '<p><a href="inscription.php">Inscription</a></p>';
+            // echo '<p><a href="connexion.php">Connexion</a></p>';
+            echo"<div class='btn-group'>
+                <button type='button' class='btn btn-success rounded-pill mx-1'><a href='inscription.php'
+                    class='text-white'>S'inscrire</a></button>
+                <button type='button' class='btn btn-success rounded-pill mx-3 float-end'><a href='connexion.php'
+                    class='text-white'>Se connecter</a></button>
+                </div>";    
         }
         ?>
-        <div class='btn-group'>
-            <button type="button" class="btn btn-success rounded-pill mx-1"><a href="inscription.php"
-                    class="text-white">s'inscrire</a></button>
-            <button type="button" class="btn btn-success rounded-pill mx-3 float-end"><a href="connexion.php"
-                    class="text-white">se connecter</a></button>
-            <button type="button" class="btn btn-danger rounded-pill mx-3 float-end"><a href='deco.php'
-                    class='text-white'>Déconnexion</a></button>
-
-        </div>
+        
     </div>
     <!-- FIN NAVBAR -->
 
