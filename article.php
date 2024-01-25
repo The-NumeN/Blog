@@ -67,7 +67,7 @@ include "style.php";
                 echo '<img src="' . $articleDetails['img_path'] . '" alt="Image de l\'article" width="100px">';
             }
             ?>
-            <p>
+            <br><br><p>
                 <?php echo isset($articleDetails['Texte']) ? $articleDetails['Texte'] : 'Texte non disponible'; ?>
             </p>
         </div><br><br>
@@ -80,7 +80,7 @@ include "style.php";
 
             // Affiche comments
             foreach ($commentsForArticle as $comment): ?>
-                <div>
+                <div class='text-bg-color'>
                     <p><strong>
                             <?php echo $comment['user_pseudo']; ?>:
                         </strong>
@@ -93,9 +93,9 @@ include "style.php";
                     <?php
                     // Ajout un form de suppr pour chaque commentaire
                     if ($userId == $comment['id_utilisateur'] || $isAdmin) {
-                        echo '<form method="post" action="' . $_SERVER["PHP_SELF"] . '?current_article_id=' . $articleId . '">';
+                        echo '<form class="bg-light text-bg-color" method="post" action="' . $_SERVER["PHP_SELF"] . '?current_article_id=' . $articleId . '">';
                         echo '<input type="hidden" name="comment_id" value="' . $comment['id_commentaire'] . '">';
-                        echo '<input type="submit" value="Supprimer">';
+                        echo '<button class="btn btn-secondary pill type="submit" value="Supprimer">Supprimer</button>';
                         echo '</form>';
                     }
                     ?>

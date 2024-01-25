@@ -27,7 +27,7 @@ if (isset($_SESSION['pseudo'])) {
 <body class="container-fluid">
     <!-- NAVBAR -->
     <div class='navbar  bg-dark fixed-top rounded'>
-    <h1 class='text-white mx-3'><a href="<?php echo $redirectPage; ?>">Ceci est notre blog</a></h1>
+    <h1 class='mx-3'><a class='text-white' href="<?php echo $redirectPage; ?>">Ceci est notre blog</a></h1>
         <?php
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION["pseudo"])) {
