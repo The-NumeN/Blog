@@ -64,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
         <?php endif; ?>
             <div class='size container'>
                 <form  method="POST" action="">
-
                     <label for="pseudo" >Pseudo:</label>
                     <input type="text"  name="pseudo" required><br>
                     <label for="password" >Mot de passe:</label>

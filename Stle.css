@@ -18,9 +18,6 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
 }
-.navbar{
-    opacity:95%;
-}
 input{
     text-align: center;
     padding:5px;
@@ -52,4 +49,10 @@ body{
 .ppnav{
     margin-left: auto;
     text-align: center;
+}
+.card-header{
+    font:bolder;
+}
+footer{
+
 }
