@@ -13,8 +13,8 @@
 }
 
 .hover_card:hover{
-    transform: scale(1.75);
-    position:absolute;
+    transform: scale(1.50);
+    position:relative;
     z-index: 100;
     transition: 0.5s;
 }
