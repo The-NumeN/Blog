@@ -1,12 +1,10 @@
-<!-- Voir commentaire de la page sur la page article(ces sont quasiment les same pages) -->
+<!-- Voir commentaire de la page sur la page index(ces sont quasiment les same pages) -->
 
 
 <?php
 session_start();
 require_once "classes.php";
 $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-$isAdmin = isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == 'admin';
-$articleId = isset($_GET['current_article_id']) ? $_GET['current_article_id'] : null;
 
 if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] !== 'admin') {
     header("Location: index.php");
@@ -15,28 +13,8 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] !== 'admin') {
 
 $database = new Database();
 $articleManager = new Article($database);
-$commentaireManager = new Commentaire($database);
-$articleDetails = $articleManager->getArticleDetails($articleId);
+$articles = $articleManager->getAllArticles();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $texteCommentaire = $_POST["commentaire"];
-
-    if (!empty($texteCommentaire) && !empty($userId)) {
-        $commentaireManager->addComment($articleId, $userId, $texteCommentaire);
-    } else {
-        echo "<p>Tous les champs du formulaire doivent être remplis.</p>";
-    }
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["comment_id"])) {
-    $commentIdToDelete = $_POST["comment_id"];
-    $commentToDelete = $commentaireManager->getCommentDetails($commentIdToDelete);
-    if ($userId == $commentToDelete['id_utilisateur'] || $isAdmin) {
-        $commentaireManager->deleteComment($commentIdToDelete);
-        header("Location: " .$_SERVER["PHP_SELF"] ."?current_article_id=" .$articleId);
-        exit();
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -44,40 +22,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["comment_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Article</title>
+    <title>Liste des Articles</title>
 </head>
 <body>
-    <h2><?php echo isset($articleDetails['Titre']) ? $articleDetails['Titre'] : 'Titre non disponible'; ?></h2>
-    <p><?php echo isset($articleDetails['Texte']) ? $articleDetails['Texte'] : 'Texte non disponible'; ?></p>
-
-    <h3>Commentaires</h3>
-    <?php
-    $commentsForArticle = $commentaireManager->getAllCommentsWithUser($articleId);
-    foreach ($commentsForArticle as $comment) : ?>
+    <div>
+        <?php
+        // Vérifier si l'utilisateur est connecté
+        if (isset($_SESSION["pseudo"])) {
+            echo "<p>Bienvenue, {$_SESSION['pseudo']}!</p>";
+            echo "<a href='deco.php'>Déconnexion</a>";
+        } else {
+            echo "<p>Non connecté</p>";
+        }
+        
+        if (!$userId) {
+            echo '<p><a href="inscription.php">Inscription</a></p>';
+            echo '<p><a href="connexion.php">Connexion</a></p>';
+        }
+    ?>
+    </div>
+    <h2>Liste des Articles</h2>
+    <!-- Affich tous les articles -->
+    <?php foreach ($articles as $article) : ?>
         <div>
-            <p><strong><?php echo $comment['user_pseudo']; ?>:</strong> <?php echo $comment['text_comm']; ?></p>
-            <small><?php echo $comment['date_heure']; ?></small>
-            <?php
-            if ($userId == $comment['id_utilisateur'] || $isAdmin) {
-                echo '<form method="post" action="' . $_SERVER["PHP_SELF"] . '?current_article_id=' . $articleId . '">';
-                echo '<input type="hidden" name="comment_id" value="' . $comment['id_commentaire'] . '">';
-                echo '<input type="submit" value="Supprimer">';
-                echo '</form>';
-            }
-            ?>
+            <h3><?php echo $article['Titre']; ?></h3>
+            <p><?php echo substr($article['Texte'], 0, 100) . '...'; ?></p>
+            <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>">Lire la suite</a>
+            <a href="update.php?current_article_id=<?php echo $article['id_article']; ?>">Modifier</a>
+            <a href="delete.php?current_article_id=<?php echo $article['id_article']; ?>">Supprimer</a>
+
         </div>
-        <hr>
     <?php endforeach; ?>
-
-    <h2>Ajouter un commentaire</h2>
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"] . "?current_article_id=$articleId"; ?>">
-        <label for="commentaire">Commentaire :</label><br>
-        <textarea name="commentaire" rows="4" cols="50" required></textarea><br>
-        <input type="submit" value="Ajouter le commentaire">
-    </form>
-    <p><a href="add_article.php">Ajouter un article</a></p>
-
 </body>
 </html>

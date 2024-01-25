@@ -47,16 +47,7 @@ class Article {
             return [];
         }
     }
-
-    // public function addArticle($titre, $texte, $datePub) {
-    //     $query = "INSERT INTO Articles (Titre, Texte, Date_pub) VALUES ('$titre', '$texte', '$datePub')";
-    //     return $this->db->connection->query($query);
-    // }
-    // public function addArticleWithImage($titre, $texte, $datePub, $img_blob, $img_taille) {
-    //     $query = "INSERT INTO Articles (Titre, Texte, Date_pub, img_blob, img_taille) VALUES ('$titre', '$texte', '$datePub', '$img_blob', '$img_taille')";
-    //     return $this->db->connection->query($query);
-    // }
-    
+        
     public function updateArticle($articleId, $newTitle, $newText) {
         $query = "UPDATE Articles SET Titre = '$newTitle', Texte = '$newText' WHERE id_article = $articleId";
         return $this->db->connection->query($query);
