@@ -13,7 +13,7 @@ include"style.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="container-fluid bg-dark">
+<body class="container-fluid">
     <!-- NAVBAR -->
     <div class='navbar  bg-secondary fixed-top rounded mx-3'>
         <h1 class='text-white mx-3'><a href="index.php">Ceci est notre Blog</a> </h1>
@@ -41,5 +41,6 @@ include"style.php";
         ?>
     </div>
     <!-- FIN NAVBAR -->
-    <br><br>
+    <br><br>   
+</body>
 </html>

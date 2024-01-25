@@ -49,14 +49,10 @@ include "style.php";
                                     <div class='card-body text-white'>
                                         <p>
                                             <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
-                                        <div class='btn-group'>
-                                            <a
-                                                href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>">Lire
-                                                la suite</a>
-                                            <a
-                                                href="update.php?current_article_id=<?php echo $article['id_article']; ?>">Modifier</a>
-                                            <a
-                                                href="delete.php?current_article_id=<?php echo $article['id_article']; ?>">Supprimer</a>
+                                        <div class="btn-group pill text-white">
+                                            <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" class="btn btn-success pill">Lire la suite</a>
+                                            <a href="update.php?current_article_id=<?php echo $article['id_article']; ?>" class="btn btn-success pill">Modifier</a>
+                                            <a href="delete.php?current_article_id=<?php echo $article['id_article']; ?>" class="btn btn-success pill">Supprimer</a>
                                         </div>
                                         </p>
                                     </div>
@@ -67,7 +63,7 @@ include "style.php";
                 <?php endforeach; ?>
                 <!-- FIN DES CARTES ARTICLES -->
             </div>
-           <button class='btn btn-success pill text-white'><a href="add_article.php">Ajouter un article</a></button> 
+        <a href="add_article.php" class='btn btn-success pill text-white'>Ajouter un article</a>
         </div>
         
     </div>

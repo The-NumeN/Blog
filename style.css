@@ -29,3 +29,6 @@ a{
     max-width: fit-content;
     display: block;
 }
+body{
+    background-color: blueviolet;
+}
