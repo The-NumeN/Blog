@@ -15,7 +15,7 @@ include "style.php";
 
 <body class="container-fluid">
     <!-- NAVBAR -->
-    <div class='navbar  bg-secondary fixed-top rounded mx-3'>
+    <div class='navbar  bg-dark fixed-top rounded mx-3'>
         <h1 class='text-white mx-3'><a href="index.php">Ceci est notre Blog</a> </h1>
         <?php
         // Vérifier si l'utilisateur est connecté
