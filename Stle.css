@@ -53,3 +53,6 @@ body{
     margin-left: auto;
     text-align: center;
 }
+.card-header{
+    font:bolder;
+}
