@@ -21,12 +21,12 @@ include "header.php";
 
 <body>
     <!-- CONTAINER SITE -->
-    <div class='container bg-secondary my-5 border rounded text-white'>
+    <div class='container bg-light  my-5 px-5 border rounded'>
         <!-- ARTICLE A LA UNE -->
         <h2 class='my-3'>Article à la une</h2>
-        <div class='container-fluid bg-dark rounded'>
+        <div class='container bg-secondary rounded'>
         
-            <div class='container p-3 my-5'>
+            <div class='container p-3 my-5 text-light'>
 
             
                 <div class='alaune'>
