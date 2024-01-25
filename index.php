@@ -7,7 +7,7 @@ $articles = $articleManager->getAllArticles();
 $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
 ?>
-<?php 
+<?php
 include "header.php";
 ?>
 <!DOCTYPE html>
@@ -18,60 +18,63 @@ include "header.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Articles</title>
 </head>
-    <!-- CONTAINER SITE -->
-    <div class='container bg-secondary my-5 border rounded text-white'>
+<!-- CONTAINER SITE -->
+<div class='container bg-secondary my-5 border rounded text-white'>
 
-        <!-- ARTICLE A LA UNE -->
-        <div class='container-fluid bg-dark rounded'>
-            <div class='container justify-content-center p-3 my-5 rounded'>
-                <div class='alaune'>
-                    <h2 class='my-3'>Liste des Articles</h2>
+    <!-- ARTICLE A LA UNE -->
+    <div class='container-fluid bg-dark rounded'>
+        <div class='container justify-content-center p-3 my-5 rounded'>
+            <div class='alaune'>
+                <h2 class='my-3'>Liste des Articles</h2>
 
-                    <!-- Affich tous les articles -->
-                    <?php foreach ($articles as $article): ?>
-                        <div>
-                            <h3>
-                                <?php echo $article['Titre']; ?>
-                            </h3>
-                            <p>
-                                <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
-                            </p>
-                            <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>">Lire la
-                                suite</a>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                <!-- Affich tous les articles -->
+                <?php foreach ($articles as $article): ?>
+                    <div>
+                        <h3>
+                            <?php echo $article['Titre']; ?>
+                        </h3>
+                        <p>
+                            <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
+                        </p>
+                        <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>">Lire la
+                            suite</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
-        <!-- FIN ARTICLE A LA UNE -->
+    </div>
+    <!-- FIN ARTICLE A LA UNE -->
 
-        <!-- DEBUT DES AUTRES ARTICLES -->
-        <div class='container bg-dark p-3 my-5 border rounded'>
-            <div class="row">
-                  <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
-                 <?php foreach ($articles as $article):?>
+    <!-- DEBUT DES AUTRES ARTICLES -->
+    <div class='container bg-dark p-3 my-5 border rounded'>
+        <div class="row">
+            <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
+            <?php foreach ($articles as $article): ?>
                 <div class='col-xl-4 col-lg-4'>
-                    <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>"
-                                 target="_top">
+                    <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>" target="_top">
                         <div class='hover_card'>
                             <div class='card'>
                                 <div class='card-header bg-primary'>
-                                    <p class='display-6'> <?php echo $article['Titre']; ?></p>
+                                    <p class='display-6'>
+                                        <?php echo $article['Titre']; ?>
+                                    </p>
                                 </div>
                                 <div class='card-body'>
-                                    <p><?php echo substr($article['Texte'], 0, 100) . '...'; ?></p>
+                                    <p>
+                                        <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-            
-            <?php endforeach ;?>
+
+            <?php endforeach; ?>
             <!-- FIN DES CARTES ARTICLES -->
-            </div>
         </div>
     </div>
-    <!-- FIN CONTAINER SITE -->
+</div>
+<!-- FIN CONTAINER SITE -->
 </body>
 <footer>
     <div class="container-fluid bg-secondary border rounded py-1">
@@ -82,4 +85,5 @@ include "header.php";
         </div>
     </div>
 </footer>
+
 </html>

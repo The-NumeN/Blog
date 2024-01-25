@@ -16,7 +16,7 @@ include"style.php";
 <body class="container-fluid bg-dark">
     <!-- NAVBAR -->
     <div class='navbar  bg-secondary fixed-top rounded mx-3'>
-        <h1 class='text-white mx-3'> Ceci est notre Blog</h1>
+        <h1 class='text-white mx-3'><a href="index.php">Ceci est notre Blog</a> </h1>
         <?php
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION["pseudo"])) {
