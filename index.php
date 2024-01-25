@@ -150,7 +150,7 @@ $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
     <!-- FIN CONTAINER SITE -->
 </body>
 <footer>
-    <div class="container-fluid bg-secondary border rounded py-1 fixed-bottom">
+    <div class="container-fluid bg-secondary border rounded py-1">
         <div class="row justify-content-center">
             <div class="col-lg-3 item social">
                 <p class="copyright text-white"> Babacar Stive & Paul</p>
@@ -158,5 +158,4 @@ $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
         </div>
     </div>
 </footer>
-
 </html>
