@@ -3,7 +3,7 @@
 require_once "classes.php";
 $database = new Database();
 $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-include"style.php";
+include "style.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +25,7 @@ include"style.php";
             class='text-white'>Deconnexion</a></button>
             </div>";
             
-        } else {
-            echo "<p class='text-white'>Non connecté</p>";
-        }
+        } 
 
         if (!$userId) {
 
