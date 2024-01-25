@@ -84,7 +84,7 @@ include "header.php";
     </div>
     <!-- FIN CONTAINER SITE -->
 </body>
-<footer>
+<footer class='fixed-bottom'>
     <div class="container-fluid bg-secondary border rounded py-1">
         <div class="row justify-content-center">
             <div class="col-lg-3 item social">
