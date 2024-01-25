@@ -20,7 +20,7 @@ include"style.php";
         <?php
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION["pseudo"])) {
-            echo "<p class='text-white'>Bienvenue, {$_SESSION['pseudo']}!</p>";
+            echo "<p class='ppnav text-white'>Bienvenue, {$_SESSION['pseudo']}!</p>";
             echo "<button type='button' class='btn btn-danger rounded-pill mx-3 float-end'><a href='deco.php'
             class='text-white'>Deconnexion</a></button>
             </div>";

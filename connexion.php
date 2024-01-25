@@ -60,16 +60,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 <?php echo $error; ?>
             </p>
         <?php endif; ?>
-        <form class='container mx-5 px-3' method="POST" action="">
-            <div class='d-flex flex-column justify-content-center'>
-                <div class='size justify-content-center px-5'>
-                    <label for="pseudo" class="d-flex justify-content-center text-white">Pseudo:</label>
-                    <input type="text" class="d-flex justify-content-center text-white" name="pseudo" required><br>
-                    <label for="password" class="d-flex justify-content-center text-white">Mot de passe:</label>
-                    <input type="password" class="d-flex justify-content-center text-white" name="password" required><br>
-                    <input type="submit" class="d-flex justify-content-center text-white btn btn-success rounded-pill" name="login" value="Se connecter">
+        <form class='container  method="POST" action="">
+                <div class='size container'>
+                    <label for="pseudo">Pseudo:</label>
+                    <input type="text" name="pseudo" required><br>
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" name="password" required><br>
+                    <input type="submit" class=" text-white btn btn-success rounded-pill" name="login" value="Se connecter">
                 </div>
-            </div>
         </form>
     </div>
 </body>

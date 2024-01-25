@@ -55,14 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
 <body>
     <br><br>
-    <div class='container bg-secondary border rounded justify-content-center'>
+    <div class='container bg-secondary border rounded'>
         <h2 class='text-white'>Inscription</h2>
         <?php if (isset($error)): ?>
             <p style="color: red;">
                 <?php echo $error; ?>
             </p>
         <?php endif; ?>
-            <div class='size'>
+            <div class='size container'>
                 <form  method="POST" action="">
 
                     <label for="pseudo" >Pseudo:</label>

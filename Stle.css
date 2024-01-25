@@ -11,8 +11,8 @@ label {
 }
 form {
     width: 100%;
-    margin-left: 300px;;
-    margin-right: auto;
+    margin-left:auto;
+
    
     padding: 20px;
     background-color: white;
@@ -46,5 +46,9 @@ a{
 }
 body{
     background-color:darkgrey;
+    text-align: center;
+}
+.ppnav{
+    margin-left: auto;
     text-align: center;
 }
