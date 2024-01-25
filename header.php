@@ -26,7 +26,7 @@ if (isset($_SESSION['pseudo'])) {
 </head>
 <body class="container-fluid">
     <!-- NAVBAR -->
-    <div class='navbar  bg-dark fixed-top rounded mx-3'>
+    <div class='navbar  bg-dark fixed-top rounded'>
         <h1 class='text-white mx-3'><a href="index.php">Ceci est notre Blog</a> </h1>
         <?php
         // Vérifier si l'utilisateur est connecté
