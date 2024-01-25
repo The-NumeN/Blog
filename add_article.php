@@ -41,10 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     $stmt = $conn->prepare("INSERT INTO Articles (Titre, Texte, Date_pub, img_path) VALUES (?, ?, ?, ?)");
 
+
     // Liaison des paramètres
     $stmt->bind_param("ssii",$titre, $texte,$datePub,$imgPath);
     if ($database->connection->query($stmt)) {
-        echo "Article inséré avec succès.";
+
+        header("Location: admin.php");
     } else {
         echo "Erreur lors de l'insertion de l'article : " .$database->connection->error;
     }
