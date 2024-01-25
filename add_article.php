@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <textarea name="texte" required></textarea><br>
 
         <label for="fic">Image :</label>
-        <input type="file" name="fic" required><br>
+        <input  type="file" name="fic" required><br>
 
         <button class='btn btn-success pill text-white' type="submit" value="Envoyer"> Envoyer</button>
     </form>
