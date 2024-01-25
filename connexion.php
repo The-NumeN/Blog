@@ -8,7 +8,7 @@ include "style.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $pseudo = $_POST['pseudo'];
-    $password = $_POST['password'];  // Ne pas hacher le mot de passe lors de la connexion
+    $password = $_POST['password'];
 
     $database = new Database();
     $userManager = new Utilisateur($database);
