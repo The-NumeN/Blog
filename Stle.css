@@ -38,6 +38,9 @@ input{
 a{
     text-decoration: none;
 }
+.none{
+    text-align: center;
+}
 .size{
     max-height: fit-content;
     max-width: fit-content;
@@ -49,4 +52,7 @@ body{
 .ppnav{
     margin-left: auto;
     text-align: center;
+}
+.card-header{
+    font:bolder;
 }

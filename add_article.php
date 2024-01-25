@@ -65,9 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h2>Ajout de l'article</h2>
+    <br><br>
+   
     <div class='container bg-secondary border rounded p-3'>
-
+    <h2>Ajout de l'article</h2>
         <form class='size container' enctype="multipart/form-data" action="" method="post">
             <label for="titre">Titre :</label>
             <input type="text" name="titre" required><br>

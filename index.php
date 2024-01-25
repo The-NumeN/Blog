@@ -74,6 +74,7 @@ include "header.php";
                                 </div>
                             </div>
                         </a>
+                        <br>
                     </div>
 
                 <?php endforeach; ?>
