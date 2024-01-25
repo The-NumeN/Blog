@@ -42,5 +42,4 @@ include"style.php";
     </div>
     <!-- FIN NAVBAR -->
     <br><br>   
-</body>
 </html>

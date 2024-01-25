@@ -19,36 +19,40 @@ include "header.php";
     <title>Liste des Articles</title>
 </head>
 
-    <!-- ARTICLE A LA UNE -->
-    <div class='container-fluid bg-dark rounded'>
-        <div class='container justify-content-center p-3 my-5 rounded'>
-            <div class='alaune'>
-            <h2 class='my-3'>Article à la une</h2>
+<body>
 
-                <!-- Affich tous les articles -->
-                <?php if (!empty($articles)) {
-                 $randomKey = array_rand($articles);
-                 $randomArticle = $articles[$randomKey];
-                ?>
-            
-            <h3>
-            <?php echo $randomArticle['Titre']; ?>
-            </h3>
-            <p>
-            <?php echo substr($randomArticle['Texte'], 0, 100) . '...'; ?>
-            </p>
+    <!-- CONTAINER SITE -->
+    <div class='container bg-secondary my-5 border rounded text-white'>
+
+        <!-- ARTICLE A LA UNE -->
+        <div class='container-fluid bg-dark rounded'>
+            <div class='container justify-content-center p-3 my-5 rounded'>
+                <div class='alaune'>
+                    <h2 class='my-3'>Liste des Articles</h2>
+
+                    <!-- Affich tous les articles -->
+                    <?php if (!empty($articles)) {
+                        $randomKey = array_rand($articles);
+                        $randomArticle = $articles[$randomKey];
+                        ?>
+
+                        <h3>
+                            <?php echo $randomArticle['Titre']; ?>
+                        </h3>
+                        <p>
+                            <?php echo substr($randomArticle['Texte'], 0, 100) . '...'; ?>
+                        </p>
+                </div>
             </div>
+                <?php
+                    }
+                    ?>
         </div>
-<?php
-}
-?>
-            </div>
-        </div>
-    </div>
+    
+
     <!-- FIN ARTICLE A LA UNE -->
 
     <!-- DEBUT DES AUTRES ARTICLES -->
-    <h2 class='my-3'>Liste des Articles</h2>
     <div class='container bg-dark p-3 my-5 border rounded'>
         <div class="row">
             <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
@@ -76,8 +80,8 @@ include "header.php";
             <!-- FIN DES CARTES ARTICLES -->
         </div>
     </div>
-</div>
-<!-- FIN CONTAINER SITE -->
+    </div>
+    <!-- FIN CONTAINER SITE -->
 </body>
 <footer>
     <div class="container-fluid bg-secondary border rounded py-1">
