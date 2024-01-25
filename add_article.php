@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     $stmt = $database->connection->prepare("INSERT INTO Articles (Titre, Texte, Date_pub, img_path) VALUES (?, ?, ?, ?)");
 
-
+    $datePub = date('Y-m-d H:i:s');
     // Liaison des paramètres
     $stmt->bind_param("ssii",$titre, $texte,$datePub,$imgPath);
     

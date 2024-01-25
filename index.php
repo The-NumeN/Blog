@@ -23,10 +23,12 @@ include "header.php";
     <!-- CONTAINER SITE -->
     <div class='container bg-secondary my-5 border rounded text-white'>
         <!-- ARTICLE A LA UNE -->
+        <h2 class='my-3'>Article A La Une</h2>
         <div class='container-fluid bg-dark rounded'>
+        
             <div class='container p-3 my-5'>
 
-                <h2 class='my-3'>Liste des Articles</h2>
+            
                 <div class='alaune'>
                     <!-- Affich tous les articles -->
                     <?php if (!empty($articles)) {
@@ -38,7 +40,7 @@ include "header.php";
                             <?php echo $randomArticle['Titre']; ?>
                         </h3>
                         <p>
-                            <?php echo substr($randomArticle['Texte'], 0, 100) . '...'; ?>
+                            <?php echo ($randomArticle['Texte']); ?>
                         </p>
                     </div>
                 </div>
@@ -49,7 +51,9 @@ include "header.php";
         <!-- FIN ARTICLE A LA UNE -->
 
         <!-- DEBUT DES AUTRES ARTICLES -->
+        <h2 class='my-3'>Liste des Articles</h2>
         <div class='container bg-dark p-3 my-5 border rounded'>
+        
             <div class="row">
                 <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
                 <?php foreach ($articles as $article): ?>
