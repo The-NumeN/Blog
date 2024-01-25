@@ -25,27 +25,32 @@ include "header.php";
     <div class='container-fluid bg-dark rounded'>
         <div class='container justify-content-center p-3 my-5 rounded'>
             <div class='alaune'>
-                <h2 class='my-3'>Liste des Articles</h2>
+            <h2 class='my-3'>Article à la une</h2>
 
                 <!-- Affich tous les articles -->
-                <?php foreach ($articles as $article): ?>
-                    <div>
-                        <h3>
-                            <?php echo $article['Titre']; ?>
-                        </h3>
-                        <p>
-                            <?php echo substr($article['Texte'], 0, 100) . '...'; ?>
-                        </p>
-                        <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>">Lire la
-                            suite</a>
-                    </div>
-                <?php endforeach; ?>
+                <?php if (!empty($articles)) {
+                 $randomKey = array_rand($articles);
+                 $randomArticle = $articles[$randomKey];
+                ?>
+            
+            <h3>
+            <?php echo $randomArticle['Titre']; ?>
+            </h3>
+            <p>
+            <?php echo substr($randomArticle['Texte'], 0, 100) . '...'; ?>
+            </p>
+            </div>
+        </div>
+<?php
+}
+?>
             </div>
         </div>
     </div>
     <!-- FIN ARTICLE A LA UNE -->
 
     <!-- DEBUT DES AUTRES ARTICLES -->
+    <h2 class='my-3'>Liste des Articles</h2>
     <div class='container bg-dark p-3 my-5 border rounded'>
         <div class="row">
             <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
