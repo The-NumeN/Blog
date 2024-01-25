@@ -9,15 +9,18 @@
     overflow-inline: auto;
 }
 .navbar{
-    opacity:85%;
+    opacity:95%;
 }
 
 .hover_card:hover{
-    transform: scale(2);
+    transform: scale(1.75);
     position:absolute;
     z-index: 100;
     transition: 0.5s;
 }
 .links{
+    text-decoration: none;
+}
+a{
     text-decoration: none;
 }

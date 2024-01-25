@@ -47,70 +47,28 @@ include "header.php";
 
         <!-- DEBUT DES AUTRES ARTICLES -->
         <div class='container bg-dark p-3 my-5 border rounded'>
-            <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
-            <div class='row'>
-                <div class='col'>
-                    <a href="" target="_top">
+            <div class="row">
+                  <!-- ALIGNEMENT DES CARTES AUTRES ARTICLES -->
+                 <?php foreach ($articles as $article):?>
+                <div class='col-xl-4 col-lg-4'>
+                    <a href="article_test.php?current_article_id=<?php echo $article['id_article']; ?>"
+                                 target="_top">
                         <div class='hover_card'>
                             <div class='card'>
                                 <div class='card-header bg-primary'>
-                                    <p class='display-6'> titre articles</p>
+                                    <p class='display-6'> <?php echo $article['Titre']; ?></p>
                                 </div>
                                 <div class='card-body'>
-                                    <p>début de texte article</p>
+                                    <p><?php echo substr($article['Texte'], 0, 100) . '...'; ?></p>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-
-                <div class='col'>
-                    <a href="" target="_top">
-                        <div class='hover_card'>
-                            <div class='card'>
-                                <div class='card-header bg-warning'>
-                                    <p class='display-6'> titre articles</p>
-                                </div>
-                                <div class='card-body'>
-                                    <p>début de texte article</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class='col'>
-                    <a href="" target="_top">
-                        <div class='hover_card'>
-                            <div class='card'>
-                                <div class='card-header bg-success'>
-                                    <p class='display-6'> titre articles</p>
-                                </div>
-                                <div class='card-body'>
-                                    <p>début de texte article</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class='col'>
-                    <a href="" target="_top">
-                        <div class='hover_card'>
-                            <div class='card'>
-                                <div class='card-header bg-danger'>
-                                    <p class='display-6'> titre articles</p>
-                                </div>
-                                <div class='card-body'>
-                                    <p>début de texte article</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
+            
+            <?php endforeach ;?>
             <!-- FIN DES CARTES ARTICLES -->
+            </div>
         </div>
     </div>
     <!-- FIN CONTAINER SITE -->
