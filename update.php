@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "classes.php";
-
+include "header.php";
 if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] !== "admin") {
     header("Location: index.php");
     exit();

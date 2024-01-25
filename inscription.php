@@ -2,6 +2,7 @@
 session_start();
 
 require_once 'classes.php';
+include "header.php";
 $articleId = isset($_GET['id_article']) ? $_GET['id_article'] : null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
@@ -40,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -3,6 +3,8 @@ session_start();
 
 require_once 'classes.php';
 
+include "header.php";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $pseudo = $_POST['pseudo'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);

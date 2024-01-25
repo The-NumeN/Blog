@@ -9,6 +9,9 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] !== 'admin') {
 }
 
 include_once 'classes.php';
+ 
+include "header.php";
+
 $database = new Database();
 $articleHandler = new Article($database);
 

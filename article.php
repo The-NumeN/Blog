@@ -41,7 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["comment_id"])) {
     }
 }
 ?>
-
+<?php 
+include "header.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
